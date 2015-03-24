@@ -1,6 +1,5 @@
 # Load plugins (only those I whitelist)
 Pry.config.should_load_plugins = false
-Pry.plugins["doc"].activate!
 
 # alias 'q' for 'exit'
 Pry.config.commands.alias_command "q", "exit-all"
@@ -18,7 +17,7 @@ end
 begin
   require 'hirb'
 
-  Hirb.enable
+  Hirb.enable({width: 155, height: 500})
 
   pry_print = Pry.config.print
 
